@@ -1,0 +1,94 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.hero{
+  background-image: url("../img/earth_bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 3rem;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+  border-bottom: 1px solid v.$primary;
+  padding: 1rem 0;
+}
+.navigation{
+  display: flex;
+  gap: 2rem;
+  &__link{
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+  }
+}
+.content{
+  margin: 0 auto;
+  padding: 3rem;
+  max-width: 100rem;
+  width: 100%;
+  border: 1px solid v.$primary;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+}
+.form{
+  display: grid;
+  width: 70%;
+  grid-template-columns: 30% 30%;
+  row-gap: 1rem;
+  padding-top: 2rem;
+  align-items: center;
+  &__button{
+    @include m.boton(v.$primary, black);
+  }
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(0, 183, 255);
+  &__rights{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+thead{
+  text-align: left;
+}
+td{
+  padding: 1rem 0.5rem;
+  &:nth-child(1){
+    padding: 0 2rem;
+  }
+  &:nth-child(5){
+    min-width: 10rem;
+  }
+}
+tr{
+  border-bottom: 1px solid white;
+}
+#paginator{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  .arrow{
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: v.$primary;
+    cursor: pointer;
+  }
+}
