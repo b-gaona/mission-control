@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 //Functions
 async function getLaunches() {
-  const res = await fetch("http://localhost:3000/v1/launches");
+  const res = await fetch(`${window.location.origin}/v1/launches`);
   const launches = await res.json();
   return launches;
 }
@@ -46,7 +46,7 @@ async function abortLaunch(evt) {
   const flightNumber = tr.children[1].textContent;
   try {
     const response = await fetch(
-      `http://localhost:3000/v1/launches/${flightNumber}`,
+      `${window.location.origin}/v1/launches/${flightNumber}`,
       {
         method: "DELETE",
       }

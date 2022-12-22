@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 //Functions
 async function getAllLaunches() {
-  const res = await fetch(`http://localhost:3000/v1/launches`);
+  const res = await fetch(`${window.location.origin}/v1/launches`);
   return await res.json();
 }
 
 async function getLaunches() {
   const res = await fetch(
-    `http://localhost:3000/v1/launches?limit=${limit}&page=${page}`
+    `${window.location.origin}/v1/launches?limit=${limit}&page=${page}`
   );
   const launches = await res.json();
   const sortedLaunches = launches.sort(

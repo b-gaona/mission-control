@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 //Functions
 async function getPlanets() {
-  const res = await fetch("http://localhost:3000/v1/planets");
+  const res = await fetch(`${window.location.origin}/v1/planets`);
   const planets = res.json();
   return planets;
 }
@@ -45,7 +45,7 @@ async function submitLaunch(form) {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/v1/launches", {
+    const response = await fetch(`${window.location.origin}/v1/launches`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -10,7 +10,7 @@ const api = require("./routes/api");
 const app = express(helmet());
 
 app.use(cors({
-  origin: "http://localhost:3000", //This server can do requests to the server, it's like a whitelist
+  origin: "https://mission-control-jzdv.onrender.com/", //This server can do requests to the server, it's like a whitelist
 })); //To allow cross origin
 
 app.use(morgan("combined"));
